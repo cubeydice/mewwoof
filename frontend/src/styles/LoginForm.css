@@ -1,0 +1,16 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 6em auto;
+  padding: 10em;
+  border-radius: 1em;
+  box-shadow: 0em 0.3em 0.75em var(--color-mellow-yellow);
+  max-width: 25em;
+  background-color: whitesmoke;
+}
+
+.form-button {
+  margin-top: 1em;
+}
