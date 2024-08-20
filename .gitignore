@@ -1,0 +1,11 @@
+env/
+.env
+node_modules
+.vit
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+*.bak
