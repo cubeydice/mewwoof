@@ -20,7 +20,7 @@ class PetListCreate(generics.ListCreateAPIView):
             print(serializer.errors)
 
 class PetDelete(generics.DestroyAPIView):
-    queryset = Pet.objects.all()
+    serializer_class = PetSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):

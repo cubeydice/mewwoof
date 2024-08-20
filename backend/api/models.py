@@ -7,4 +7,4 @@ class Pet(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="pets")
 
     def __str__(self):
-        return self.title
+        return self.name
