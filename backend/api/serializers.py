@@ -8,12 +8,13 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ["id", "username", "password"]
         extra_kwargs = {"password": {"write_only": True}}
 
-        def create(self, validated_data):
-            user = User.objects.create_user(**validated_data)
-            return user
+    def create(self, validated_data):
+        print(validated_data)
+        user = User.objects.create_user(**validated_data)
+        return user
 
 class PetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pet
-        fields = ["id", "name", "pet_type", "age", "created_at", "author"]
+        fields = ["id", "name", "created_at", "owner"]
         extra_kwargs = {"owner": {"read_only": True}}
