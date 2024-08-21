@@ -8,8 +8,11 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-left">
-                <Link to="/"><img src={Icon} className="logo" alt="icon"/></Link>
-                <p className='logo-title'>mewwoof</p>
+                <Link to="/">
+                    <img src={Icon} className="logo" alt="icon"/>
+                    <p className='logo-title'>mewwoof</p>
+                </Link>
+
             </div>
             <div className="navbar-right">
                 <Link to={'/logout'}>Logout</Link>

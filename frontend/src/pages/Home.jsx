@@ -23,7 +23,7 @@ function Home() {
 
     const deletePet = (id) => {
         api
-            .delete(`/api/pets/delete/${id}/`)
+            .delete(`/api/pets/delete/${id}`)
             .then((res) => {
                 if (res.status === 204) alert("Pet deleted!");
                 else alert("Failed to delete pet.");
@@ -48,9 +48,11 @@ function Home() {
         <div>
             <div>
                 <h2>Pets</h2>
-                {pets.map((pet) => (
-                    <Pet pet={pet} onDelete={deletePet} key={pet.id} />
-                ))}
+                <div className="pet-container">
+                    {pets.map((pet) => (
+                        <Pet pet={pet} onDelete={deletePet} key={pet.id} />
+                    ))}
+                </div>
             </div>
 
             <h2>Add a Pet</h2>

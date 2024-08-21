@@ -19,13 +19,14 @@
 .icon {
   height: 2em;
 }
-.navbar > * {
+
+.navbar > *, .navbar-left > * {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.navbar-left > p {
+.navbar-left p {
  font-size: 3rem;
  font-weight: 400;
 }
