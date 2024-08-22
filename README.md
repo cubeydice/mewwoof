@@ -5,6 +5,9 @@ A web application to keep track of your current pets. The frontend is built usin
 ## ✨ Features
 
 - **Add Pets**: Create entries for your pets.
+  
+  <img src="https://github.com/user-attachments/assets/b7314d39-9e79-43a6-a666-67638ba78778" alt="login" width="300"/>
+
 - **Edit & Delete Pets**: Update or remove pet entries whenever needed.
 - **User Authentication**: Secure login and registration for users.
 
