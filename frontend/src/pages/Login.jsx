@@ -1,8 +1,9 @@
 import LoginForm from "../components/LoginForm"
 
-function Login() {
+// eslint-disable-next-line react/prop-types
+function Login({ setLoggedIn }) {
     return <>
-        <LoginForm route="/api/token/" method="login" />
+        <LoginForm route="/api/token/" method="login" setLoggedIn={setLoggedIn}/>
     </>
 }
 
