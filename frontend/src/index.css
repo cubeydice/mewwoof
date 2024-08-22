@@ -17,11 +17,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: auto;
+  height:100vh;
   max-width: 57rem;
+  position: relative;
+  margin: auto;
 }
 
 a {

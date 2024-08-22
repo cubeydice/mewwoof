@@ -10,7 +10,7 @@ function LoginForm({ route, method, setLoggedIn }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
-    const [errors, setErrors] = useState("");
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
     const name = method === "login" ? "Login" : "Register";
@@ -27,14 +27,14 @@ function LoginForm({ route, method, setLoggedIn }) {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access);
                 localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
                 setLoggedIn(true);
-                setErrors("");
+                setErrors({});
                 navigate("/");
             } else {
                 navigate("/login");
             }
         } catch (error) {
-            console.log(error);
-            setErrors("Username or password is incorrect.");
+            setErrors(error.response.data);
+            console.log(errors)
         } finally {
             setLoading(false)
         }
@@ -50,6 +50,7 @@ function LoginForm({ route, method, setLoggedIn }) {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Username"
             />
+            {errors && <span className="errors">{errors.username}</span>}
             <input
                 className="form-input"
                 type="password"
@@ -57,8 +58,9 @@ function LoginForm({ route, method, setLoggedIn }) {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
             />
+            {errors && <span className="errors">{errors.password}</span>}
+            {errors && <span className="errors">{errors.detail}</span>}
             {loading && <Loading />}
-            {errors && <p className="errors">{errors}</p>}
             <button className="form-button" type="submit">
                 {name}
             </button>

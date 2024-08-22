@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import Error404 from "./pages/Error404"
 import ProtectedRoute from "./components/ProtectedRoute"
 import Navbar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -23,13 +24,13 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Navbar loggedIn={loggedIn} logout={Logout}/>
+      <Navbar loggedIn={loggedIn} logout={Logout}/>
       <Routes>
         <Route
           path="/"
           element={
             <ProtectedRoute>
-              <Home />
+              <Home loggedIn={loggedIn}/>
             </ProtectedRoute>
           }
         />
@@ -38,6 +39,7 @@ function App() {
         <Route path="/register" element={<RegisterAndLogout />} />
         <Route path="*" element={<Error404 />}></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }

@@ -1,0 +1,23 @@
+#home-container {
+  position: relative;
+  gap: 2em;
+  margin: auto;
+  height: 80%;
+  width: 90%;
+  padding: 2em;
+  border-radius: 1em;
+  background-color: whitesmoke;
+}
+
+.pets-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.loading {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
