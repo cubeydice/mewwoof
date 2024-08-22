@@ -9,7 +9,11 @@
   background-color: whitesmoke;
 }
 
-.pets-container {
+.pets-container{
+  min-height: 20em;
+}
+
+.pets-list-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

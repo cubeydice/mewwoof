@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import api from "../api";
 import { Link, useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import Loading from "./Loading";
 import '../styles/LoginForm.css'
 
 // eslint-disable-next-line react/prop-types
 function LoginForm({ route, method, setLoggedIn }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
@@ -18,7 +16,6 @@ function LoginForm({ route, method, setLoggedIn }) {
     useEffect(() => {}, [errors]);
 
     const handleSubmit = async (e) => {
-        setLoading(true);
         e.preventDefault();
 
         try {
@@ -35,8 +32,6 @@ function LoginForm({ route, method, setLoggedIn }) {
         } catch (error) {
             setErrors(error.response.data);
             console.log(errors)
-        } finally {
-            setLoading(false)
         }
     };
 
@@ -60,7 +55,6 @@ function LoginForm({ route, method, setLoggedIn }) {
             />
             {errors && <span className="errors">{errors.password}</span>}
             {errors && <span className="errors">{errors.detail}</span>}
-            {loading && <Loading />}
             <button className="form-button" type="submit">
                 {name}
             </button>

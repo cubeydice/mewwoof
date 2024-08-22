@@ -39,7 +39,6 @@ function Home({loggedIn}) {
             .then((res) => {
                 if (res.status === 204) {
                     setErrors({});
-                    alert("Pet deleted!")
                 }
                 else alert("Failed to delete pet.");
                 getPets();
@@ -54,7 +53,6 @@ function Home({loggedIn}) {
             .then((res) => {
                 if (res.status === 201) {
                     setErrors({});
-                    alert("Pet created!");
                 }
                 else alert("Failed to add pet.");
                 getPets();
@@ -65,12 +63,11 @@ function Home({loggedIn}) {
     return (
         <>
         <div id="home-container">
-            <div>
+            <div className="pets-container">
                 <h2>Pets</h2>
                 {loading ?
                     <div className="loading"><Loading /></div> :
-                    <div className="pets-container">
-                        {console.log(pets)}
+                    <div className="pets-list-container">
                         {pets.length === 0 ? <p>No pets found 🥺</p> : null}
                         {pets.map((pet) => (
                             <Pet pet={pet} onDelete={deletePet} key={pet.id} />
@@ -78,23 +75,24 @@ function Home({loggedIn}) {
                     </div>
                 }
             </div>
-
-            <h2>Add a Pet</h2>
-            <form onSubmit={createPet}>
-                <label htmlFor="name">Name:</label>
-                <br />
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                />
-                <br />
-                {errors && <p className="errors">{errors.name}</p>}
-                <input type="submit" value="Submit"></input>
-            </form>
+            <div className="add-pet-container">
+                <h2>Add a Pet</h2>
+                <form onSubmit={createPet}>
+                    <label htmlFor="name">Name:</label>
+                    <br />
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        onChange={(e) => setName(e.target.value)}
+                        value={name}
+                    />
+                    <br />
+                    {errors && <p className="errors">{errors.name}</p>}
+                    <input type="submit" value="Submit"></input>
+                </form>
+            </div>
         </div>
 
         </>
