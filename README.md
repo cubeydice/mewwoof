@@ -42,7 +42,7 @@ A web application to keep track of your current pets. The frontend is built usin
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/mewwoof.git
+    git clone https://github.com/cubeydice/mewwoof.git
     cd pet-log/backend
     ```
 
