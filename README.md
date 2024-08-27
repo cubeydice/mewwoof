@@ -28,6 +28,7 @@ A web application to keep track of your current pets. The frontend is built usin
 - **Python Django**: Handles the server-side logic, routing, and database interactions.
 - **Django REST Framework**: Manages the API for frontend-backend communication.
 - **PostgreSQL**: The database for storing pet entries and user data.
+- **Aiven Console**: Database server.
 
 ## 🚀 Setup and Installation
 
